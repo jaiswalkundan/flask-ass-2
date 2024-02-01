@@ -1,0 +1,153 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4fe1105b-51cd-4003-b19d-93adc4550568",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q1. Explain GET and POST methods."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "961fd1ef-07a9-400b-b4fb-a0fa0d6d9fd5",
+   "metadata": {},
+   "source": [
+    "GET : primaril used for requesting data from a specified resource.\n",
+    "parameters are appended to the URL in the from of a query string.\n",
+    "visible in the URL making it less secure for sensitive information.\n",
+    "\n",
+    "POST: used for submitting data to be processed to a specified resource.\n",
+    "parameters are sent in the request body not visible in the URL.\n",
+    "suitable for larger data sets and when security is a priority."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f0428871-c981-47c7-98d9-8c2c93290204",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q2. Why is request used in Flask?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4380d6db-9fbd-4433-92f1-0ad3c4bf3412",
+   "metadata": {},
+   "source": [
+    "in flask the term \"request\" refers to the incoming HTTP request made by a client.to the server\n",
+    "the request object in flask allows you to acess and handle information from incomming request."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "afc49ab0-59c0-4f7a-93b0-8a86af68d026",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q3. Why is redirect() used in Flask?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "de800b1c-ff17-4414-8390-495dedc3584c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "The redirect() function in flask is used to send a respons to the clients browser instructing it to navigate\n",
+    "to a diffent URL."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3b2236f1-5417-47be-8395-0fccbdf6898a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q4. What are templates in Flask? Why is the render_template() function used?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c9127402-5306-4ff1-98e0-15ab39248838",
+   "metadata": {},
+   "source": [
+    "in flask template are filles that contain dynamic content allowing you to build html pages with placeholders for variables. the render_templet() function is used to render these templet replacing placeholders with actual values.this function helps separate your python code.(in route) from your HTML code."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "099493ae-72bc-428a-a77c-05e5f5ab6605",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q5. Create a simple API. Use Postman to test it. Attach the screenshot of the output in the Jupyter Notebook."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6f4eb621-15e7-4499-b28a-58f53e0ff042",
+   "metadata": {},
+   "source": [
+    "from flask import Flask, request, jsonify\n",
+    "app = Flask( __name__)\n",
+    "@app. route('/api/example', methods=['post'])\n",
+    "def example_api():\n",
+    "    data = request.json\n",
+    "    return jsonify({'result':'Sucess'})\n",
+    "\n",
+    "if __name__ == '__main__':\n",
+    "    app.run(debug = True)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4069344a-13b7-4e6b-8aa5-19038b5e44d3",
+   "metadata": {},
+   "source": [
+    "import json\n",
+    "\n",
+    "with open('output.json','r')as file:\n",
+    "    data = json.load(file)\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4b4fc9d0-7048-4285-8018-e73c382915ed",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
